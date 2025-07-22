@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pokétwo PC Shop</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      color: white;
+    }
+
+    header {
+      background: #0f172a;
+      padding: 20px;
+      text-align: center;
+      font-size: 28px;
+      font-weight: bold;
+      border-bottom: 2px solid #1f2937;
+    }
+
+    nav {
+      text-align: center;
+      padding: 10px 0;
+      background: #1e293b;
+    }
+
+    nav a {
+      margin: 0 15px;
+      color: #94a3b8;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: #facc15;
+    }
+
+    section {
+      padding: 40px 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 32px;
+      color: #facc15;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #111827;
+      border: 1px solid #10b981;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    th, td {
+      padding: 15px;
+      text-align: center;
+      border-bottom: 1px solid #334155;
+    }
+
+    th {
+      background: #1f2937;
+      color: #818cf8;
+    }
+
+    .calculator {
+      margin-top: 30px;
+      background: #1e293b;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .calculator input {
+      padding: 10px;
+      width: 100%;
+      font-size: 16px;
+      margin-top: 10px;
+      margin-bottom: 15px;
+      background: #0f172a;
+      border: 1px solid #334155;
+      color: white;
+    }
+
+    .result {
+      font-size: 18px;
+      color: #10b981;
+    }
+
+    .dm-btn {
+      display: block;
+      margin: 40px auto 0;
+      text-align: center;
+      padding: 15px 30px;
+      background: #2563eb;
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      border-radius: 8px;
+      text-decoration: none;
+      width: fit-content;
+      transition: background 0.3s;
+    }
+
+    .dm-btn:hover {
+      background: #1d4ed8;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #0f172a;
+      margin-top: 40px;
+      color: #64748b;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>Pokétwo PC Shop</header>
+
+  <nav>
+    <a href="#pricing">Pricing</a>
+    <a href="#payment">Payment</a>
+    <a href="#proofs">Proofs</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="pricing">
+    <h2>Pricing</h2>
+    <table>
+      <tr>
+        <th>Amount</th>
+        <th>Price (USD)</th>
+        <th>Discount</th>
+      </tr>
+      <tr>
+        <td>1 million PC</td>
+        <td>$0.40</td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td>10 million PC</td>
+        <td>$4.00</td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td>20 million PC</td>
+        <td>$7.20</td>
+        <td>10% off</td>
+      </tr>
+      <tr>
+        <td>50 million PC</td>
+        <td>$16.80</td>
+        <td>16% off</td>
+      </tr>
+      <tr>
+        <td>100 million PC</td>
+        <td>$32.00</td>
+        <td>20% off</td>
+      </tr>
+    </table>
+
+    <div class="calculator">
+      <h3>Price Calculator</h3>
+      <label>Enter amount (in millions):</label>
+      <input type="number" id="amount" placeholder="e.g. 15" oninput="calculatePrice()">
+      <div class="result" id="priceResult"></div>
+    </div>
+  </section>
+
+  <section id="payment">
+    <h2>Payment</h2>
+    <p style="text-align:center;">UPI / Crypto / Other methods available. DM for options.</p>
+  </section>
+
+  <section id="proofs">
+    <h2>Proofs</h2>
+    <p style="text-align:center;">Proof screenshots available on request. Ask in DM.</p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p style="text-align:center;">To buy, DM <strong>@saimas4</strong> on Discord</p>
+    <a class="dm-btn" href="https://discord.com/users/saimas4" target="_blank">DM @saimas4</a>
+  </section>
+
+  <footer>© 2025 Pokétwo PC Shop | Not affiliated with Pokétwo</footer>
+
+  <script>
+    function calculatePrice() {
+      const amount = parseFloat(document.getElementById('amount').value);
+      if (!amount || amount <= 0) {
+        document.getElementById('priceResult').innerText = "";
+        return;
+      }
+
+      let pricePerMil = 0.40;
+      let total = amount * pricePerMil;
+
+      if (amount >= 100) total *= 0.8;
+      else if (amount >= 50) total *= 0.84;
+      else if (amount >= 20) total *= 0.9;
+
+      document.getElementById('priceResult').innerText =
+        `Total Price: $${total.toFixed(2)} USD`;
+    }
+  </script>
+
+</body>
+</html>
