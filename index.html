@@ -1,61 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Pokétwo PC Shop</title>
+  <meta charset="UTF-8">
+  <title>Pokétwo PC Shop - saimas4</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(135deg, #0f172a, #1e293b);
-      color: white;
-    }
-
-    header {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       background: #0f172a;
+      color: #f1f5f9;
+      margin: 0;
       padding: 20px;
+    }
+
+    h1, h2 {
+      color: #38bdf8;
       text-align: center;
-      font-size: 28px;
-      font-weight: bold;
-      border-bottom: 2px solid #1f2937;
     }
 
-    nav {
+    .shop-info {
       text-align: center;
-      padding: 10px 0;
-      background: #1e293b;
-    }
-
-    nav a {
-      margin: 0 15px;
-      color: #94a3b8;
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    nav a:hover {
-      color: #facc15;
-    }
-
-    section {
-      padding: 40px 20px;
-      max-width: 800px;
-      margin: auto;
-    }
-
-    h2 {
-      text-align: center;
-      margin-bottom: 20px;
-      font-size: 32px;
-      color: #facc15;
+      margin-bottom: 30px;
     }
 
     table {
       width: 100%;
+      max-width: 600px;
+      margin: auto;
       border-collapse: collapse;
-      background: #111827;
-      border: 1px solid #10b981;
+      background: #1e293b;
       border-radius: 10px;
       overflow: hidden;
     }
@@ -67,81 +40,83 @@
     }
 
     th {
-      background: #1f2937;
-      color: #818cf8;
+      background: #0ea5e9;
+      color: #fff;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
     }
 
     .calculator {
-      margin-top: 30px;
-      background: #1e293b;
+      max-width: 400px;
+      margin: 40px auto;
       padding: 20px;
+      background: #1e293b;
       border-radius: 10px;
-    }
-
-    .calculator input {
-      padding: 10px;
-      width: 100%;
-      font-size: 16px;
-      margin-top: 10px;
-      margin-bottom: 15px;
-      background: #0f172a;
-      border: 1px solid #334155;
-      color: white;
-    }
-
-    .result {
-      font-size: 18px;
-      color: #10b981;
-    }
-
-    .dm-btn {
-      display: block;
-      margin: 40px auto 0;
       text-align: center;
-      padding: 15px 30px;
-      background: #2563eb;
-      color: white;
-      font-size: 18px;
-      font-weight: bold;
-      border-radius: 8px;
-      text-decoration: none;
-      width: fit-content;
-      transition: background 0.3s;
     }
 
-    .dm-btn:hover {
-      background: #1d4ed8;
+    input[type="number"] {
+      padding: 10px;
+      width: 80%;
+      border: none;
+      border-radius: 5px;
+      margin-bottom: 15px;
+      font-size: 16px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background: #0ea5e9;
+      border: none;
+      color: white;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #0284c7;
+    }
+
+    #priceResult {
+      margin-top: 15px;
+      font-size: 18px;
+      color: #facc15;
     }
 
     footer {
-      text-align: center;
-      padding: 20px;
-      background: #0f172a;
       margin-top: 40px;
-      color: #64748b;
+      text-align: center;
       font-size: 14px;
+      color: #94a3b8;
+    }
+
+    @media (max-width: 600px) {
+      table, .calculator {
+        width: 100%;
+      }
     }
   </style>
 </head>
 <body>
 
-  <header>Pokétwo PC Shop</header>
+  <div class="shop-info">
+    <h1>Pokétwo PC Shop</h1>
+    <h2>By @saimas4</h2>
+    <p>Fast & trusted seller – Payment methods available (Crypto/UPI)</p>
+  </div>
 
-  <nav>
-    <a href="#pricing">Pricing</a>
-    <a href="#payment">Payment</a>
-    <a href="#proofs">Proofs</a>
-    <a href="#contact">Contact</a>
-  </nav>
-
-  <section id="pricing">
-    <h2>Pricing</h2>
-    <table>
+  <table>
+    <thead>
       <tr>
         <th>Amount</th>
         <th>Price (USD)</th>
         <th>Discount</th>
       </tr>
+    </thead>
+    <tbody>
       <tr>
         <td>1 million PC</td>
         <td>$0.40</td>
@@ -154,46 +129,33 @@
       </tr>
       <tr>
         <td>20 million PC</td>
-        <td>$7.20</td>
-        <td>10% off</td>
+        <td>$7.60</td>
+        <td>5% off</td>
       </tr>
       <tr>
         <td>50 million PC</td>
-        <td>$16.80</td>
-        <td>16% off</td>
+        <td>$18.50</td>
+        <td>7.5% off</td>
       </tr>
       <tr>
         <td>100 million PC</td>
-        <td>$32.00</td>
-        <td>20% off</td>
+        <td>$36.00</td>
+        <td>10% off</td>
       </tr>
-    </table>
+    </tbody>
+  </table>
 
-    <div class="calculator">
-      <h3>Price Calculator</h3>
-      <label>Enter amount (in millions):</label>
-      <input type="number" id="amount" placeholder="e.g. 15" oninput="calculatePrice()">
-      <div class="result" id="priceResult"></div>
-    </div>
-  </section>
+  <div class="calculator">
+    <h3>Price Calculator</h3>
+    <input type="number" id="amount" placeholder="Enter amount in millions (e.g. 25)">
+    <br>
+    <button onclick="calculatePrice()">Calculate</button>
+    <div id="priceResult"></div>
+  </div>
 
-  <section id="payment">
-    <h2>Payment</h2>
-    <p style="text-align:center;">UPI / Crypto / Other methods available. DM for options.</p>
-  </section>
-
-  <section id="proofs">
-    <h2>Proofs</h2>
-    <p style="text-align:center;">Proof screenshots available on request. Ask in DM.</p>
-  </section>
-
-  <section id="contact">
-    <h2>Contact</h2>
-    <p style="text-align:center;">To buy, DM <strong>@saimas4</strong> on Discord</p>
-    <a class="dm-btn" href="https://discord.com/users/saimas4" target="_blank">DM @saimas4</a>
-  </section>
-
-  <footer>© 2025 Pokétwo PC Shop | Not affiliated with Pokétwo</footer>
+  <footer>
+    &copy; 2025 Pokétwo PC Shop | Contact: @saimas4
+  </footer>
 
   <script>
     function calculatePrice() {
@@ -206,9 +168,9 @@
       let pricePerMil = 0.40;
       let total = amount * pricePerMil;
 
-      if (amount >= 100) total *= 0.8;
-      else if (amount >= 50) total *= 0.84;
-      else if (amount >= 20) total *= 0.9;
+      if (amount >= 100) total *= 0.90;       // 10% off
+      else if (amount >= 50) total *= 0.925;  // 7.5% off
+      else if (amount >= 20) total *= 0.95;   // 5% off
 
       document.getElementById('priceResult').innerText =
         `Total Price: $${total.toFixed(2)} USD`;
@@ -217,3 +179,4 @@
 
 </body>
 </html>
+
