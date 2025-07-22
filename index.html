@@ -206,11 +206,11 @@
       let pricePerMil = 0.40;
       let total = amount * pricePerMil;
 
-      if (amount >= 100) total *= 0.9;
-      else if (amount >= 50) total *= 0.925;
-      else if (amount >= 20) total *= 0.95;
+      if (amount >= 100) total *= 0.90;       // 10% off
+      else if (amount >= 50) total *= 0.925;  // 7.5% off
+      else if (amount >= 20) total *= 0.95;   // 5% off
 
-      document.getElementById('priceResult').innerText =
+      document.getElementById('priceResult').innerText = 
         `Total Price: $${total.toFixed(2)} USD`;
     }
   </script>
